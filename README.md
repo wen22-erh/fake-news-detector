@@ -1,8 +1,10 @@
 # fake-news-detector
 
 新聞媒體辨識專題
-manifest:整個 Chrome extension 核心的配置檔案，放置擴充功能的重要資訊
+
 [Flask 教學網址](https://devs.tw/post/448)
+
+```mermaid
 flowchart TD
     A["popup.html<br>載入 popup.js"] --> B["popup.js<br>抓取 URL"]
     B --> C["popup.js<br>傳訊息給 content.js"]
@@ -12,3 +14,4 @@ flowchart TD
     F --> G["跳轉 result.html<br>載入 result.js"]
     G --> H["result.js<br>POST 內文到 Flask"]
     H --> I["Flask (app.py)<br>寫入 csv"]
+```
