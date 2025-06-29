@@ -1,0 +1,11 @@
+{
+    "name": "Google Extension crawling url and content",
+    "description": "show current url and content",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": ["tabs", "scripting", "storage"],
+    "host_permissions": ["<all_urls>"]
+}
