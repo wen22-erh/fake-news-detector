@@ -34,5 +34,3 @@
 -   如果遇到問題，可以用 `docker logs <container_id>` 查看日誌
 
 ---
-
-Happy Dockering! 🚀
