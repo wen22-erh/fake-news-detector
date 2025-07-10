@@ -1,0 +1,12 @@
+#box {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: blueviolet;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 4.1rem;
+    font-weight: flex;
+    display: flex;
+}
