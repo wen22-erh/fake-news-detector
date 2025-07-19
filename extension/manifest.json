@@ -14,5 +14,11 @@
             "css": ["box.css"]
         }
     ],
+    "web_accessible_resources": [
+        {
+            "resources": ["check.png", "cross.jpg"],
+            "matches": ["<all_urls>"]
+        }
+    ],
     "host_permissions": ["<all_urls>"]
 }
