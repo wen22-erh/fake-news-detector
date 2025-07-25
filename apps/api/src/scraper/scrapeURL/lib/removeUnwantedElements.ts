@@ -1,6 +1,8 @@
 // TODO: refactor
 
-import { AnyNode, Cheerio, load } from "cheerio"; // rustified
+// import { AnyNode, Cheerio, load } from "cheerio"; // rustified
+import { load, Cheerio } from "cheerio";
+type AnyNode = any;
 import { ScrapeOptions } from "../../../controllers/v1/types";
 import { transformHtml } from "../../../lib/html-transformer";
 import { logger } from "../../../lib/logger";

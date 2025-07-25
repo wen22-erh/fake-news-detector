@@ -21,24 +21,27 @@ interface RankingResult {
   }[];
 }
 
-export async function rerankDocuments_FO(
+export async function rerankDocuments(
   documents: (string | Record<string, string>)[],
   query: string,
   topN = 3,
   model = "rerank-english-v3.0",
 ) {
+  const stringDocuments: string[] = documents.map(x =>
+    typeof x === "string" ? x : JSON.stringify(x)
+  );
+
   const rerank = await cohere.v2.rerank({
-    documents,
+    documents: stringDocuments,
     query,
     topN,
     model,
-    returnDocuments: true,
   });
 
   return rerank.results
     .sort((a, b) => b.relevanceScore - a.relevanceScore)
     .map((x) => ({
-      document: x.document,
+      document: documents[x.index],
       index: x.index,
       relevanceScore: x.relevanceScore,
     }));
