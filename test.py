@@ -27,4 +27,4 @@ except Exception as e:
 collection.insert_one({
     "url":"https://edition.cnn.com/2025/07/24/sport/venus-williams-frech-dc-open-spt",
     "content":str(crawl_result)
-    })
+    })git commit -m "Initial commit"
