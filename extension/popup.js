@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ urls: urls }),
         });
-
+        
         tabs.forEach((tab) => {
             chrome.scripting.executeScript({
                 target: { tabId: tab.id },
