@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>URL 詳情面板</title>
+  <link rel="stylesheet" href="./sidepanel.css" />
+</head>
+<body>
+  <main class="panel">
+    <header class="panel-header">
+      <div>
+        <h1>URL 詳情面板</h1>
+        <p>顯示完整風險分析內容與後續操作建議。</p>
+      </div>
+      <div class="panel-actions">
+        <button id="refreshBtn" class="ghost">重新查詢</button>
+        <button id="closeBtn" class="ghost">關閉</button>
+      </div>
+    </header>
+
+    <section id="emptyState" class="empty-state">
+      尚未選擇任何 URL。請先在頁面上 hover 某個連結，再點「查看詳情」。
+    </section>
+
+    <section id="detailCard" class="detail-card hidden">
+      <div class="top-row">
+        <div>
+          <div id="badge" class="badge risk-unknown">未知</div>
+          <div class="meta-line">
+            <span id="dataStatus"></span>
+            <span>•</span>
+            <span id="analysisTime"></span>
+          </div>
+        </div>
+        <button id="pinBtn" class="primary">釘選</button>
+      </div>
+
+      <div class="section">
+        <div class="label">URL</div>
+        <div id="urlText" class="url-text"></div>
+      </div>
+
+      <div class="section">
+        <div class="label">判定依據</div>
+        <div id="detailedReason" class="content"></div>
+      </div>
+
+      <div class="section">
+        <div class="label">風險因子</div>
+        <ul id="riskFactors" class="list"></ul>
+      </div>
+
+      <div class="section">
+        <div class="label">建議操作</div>
+        <ul id="suggestedActions" class="list"></ul>
+      </div>
+
+      <div class="section">
+        <div class="label">分析附註</div>
+        <pre id="analysisMeta" class="meta-box"></pre>
+      </div>
+
+      <div class="bottom-actions">
+        <button id="unpinAndCloseBtn" class="danger">取消釘選並關閉</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="./sidepanel.js"></script>
+</body>
+</html>

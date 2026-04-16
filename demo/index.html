@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>URL Risk Hover Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 880px;
+      margin: 40px auto;
+      padding: 0 16px;
+      line-height: 1.7;
+      color: #111827;
+    }
+    h1 {
+      margin-bottom: 8px;
+    }
+    .hint {
+      color: #6b7280;
+      margin-bottom: 20px;
+    }
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
+      background: #f9fafb;
+    }
+    a {
+      color: #2563eb;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <h1>URL Risk Hover Inspector Demo</h1>
+  <p class="hint">載入 extension 後，將滑鼠停留在下列連結 200ms 以上，即可看到 tooltip 與 Side Panel 流程。</p>
+
+  <div class="card">
+    <strong>安全</strong>
+    <p><a href="https://www.google.com/">https://www.google.com/</a></p>  
+    <p><a href="https://github.com/">https://github.com/</a></p>
+    <p><a href="https://docs.python.org/">https://docs.python.org/</a></p>
+  </div>
+
+  <div class="card">
+    <strong>低風險 / 可疑 / 危險</strong>
+    <p><a href="https://news.ycombinator.com/">https://news.ycombinator.com/</a></p>
+    <p><a href="https://promo.example-cdn-login.com/">https://promo.example-cdn-login.com/</a></p>
+    <p><a href="http://paypa1-security-check.example/login">http://paypa1-security-check.example/login</a></p>
+  </div>
+
+  <div class="card">
+    <strong>未知</strong>
+    <p><a href="https://unknown-domain-for-demo.test/path">https://unknown-domain-for-demo.test/path</a></p>
+  </div>
+</body>
+</html>
