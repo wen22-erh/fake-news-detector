@@ -42,7 +42,7 @@
 
 為了解決 mBERT 單次輸入 512 tokens 的長度限制，本系統設計了**階層式滑動視窗架構**。透過在 mBERT 之上堆疊額外的多頭自注意力層，不僅保留了長篇新聞後段的語境，更有效捕捉了不同段落間的潛在矛盾。
 
-![階層式 mBERT 模型架構圖](docs/assets/moddd_git.png)
+![階層式 mBERT 模型架構圖](docs/assets/moddd_pic.png)
 
 ## 成果畫面
 
