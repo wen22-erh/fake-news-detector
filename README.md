@@ -126,14 +126,13 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
-
-Create local environment variables:
+設定環境變數：
 
 ```bash
 cp .env.example .env
 ```
 
-Edit `.env` for your MongoDB, model path, crawler, and Firecrawl settings.
+請編輯 .env 檔案，填入您的 MongoDB 連線字串、模型路徑、以及 Firecrawl 爬蟲等相關金鑰設定。
 
 ## 執行推論管線
 
