@@ -1,4 +1,13 @@
-# 基於階層式 mBERT 與可解釋性 AI 之假新聞即時辨識 Chrome 擴充套件 A Real-Time Fake News Detection Chrome Extension Based on Hierarchical mBERT and Explainable AI
+# 基於階層式 mBERT 與可解釋性 AI 之假新聞即時辨識 Chrome 擴充套件
+**A Real-Time Fake News Detection Chrome Extension Based on Hierarchical mBERT and Explainable AI**
+
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![Transformers](https://img.shields.io/badge/HuggingFace-Transformers-F9AB00?style=flat-square&logo=huggingface&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=white)
+![Chrome Extension](https://img.shields.io/badge/Chrome_Extension-4285F4?style=flat-square&logo=google-chrome&logoColor=white)
+
+---
 
 本專題實作一套可嵌入日常瀏覽情境的假新聞輔助辨識系統。使用者在網頁中 hover 到新聞 URL 後，Chrome 擴充套件會在低干擾的提示框中顯示該連結的風險摘要；若需要更多資訊，也可以開啟側邊欄查看模型判斷結果、候選可疑句段與文章內容標示。
 
@@ -35,14 +44,18 @@
 - 機率校準：透過 Temperature Scaling、NLL 與 ECE 評估模型信心分數，使前端提示更可靠。
 
 ## 系統架構
-
-![系統架構圖](docs/assets/system.png)
+<div align="center">
+  <img src="docs/assets/system.png" width="650">
+</div>
 
 ## 模型架構設計 (Hierarchical mBERT)
 
 為了解決 mBERT 單次輸入 512 tokens 的長度限制，本系統設計了**階層式滑動視窗架構**。透過在 mBERT 之上堆疊額外的多頭自注意力層，不僅保留了長篇新聞後段的語境，更有效捕捉了不同段落間的潛在矛盾。
 
-![階層式 mBERT 模型架構圖](docs/assets/moddd_pic.png)
+<div align="center">
+  <img src="docs/assets/moddd_pic.png" width="650">
+</div>
+
 
 ## 成果畫面
 
