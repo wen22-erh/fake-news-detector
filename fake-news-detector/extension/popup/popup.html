@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URL 風險檢視設定</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <main class="popup-container">
+    <section class="popup-card">
+      <h1 class="popup-title">URL 風險檢視</h1>
+      <p class="popup-subtitle">設定後端 API 位址與清除快取</p>
+
+      <div class="form-group">
+        <label for="apiBaseUrl" class="form-label">API Base URL</label>
+        <input id="apiBaseUrl" type="text" class="form-input" placeholder="http://120.105.129.171:5050"
+          autocomplete="off" spellcheck="false" />
+      </div>
+
+      <div class="button-group">
+        <button id="saveSettingsBtn" class="btn btn-primary" type="button">
+          儲存設定
+        </button>
+        <button id="clearCacheBtn" class="btn btn-secondary" type="button">
+          清除快取
+        </button>
+      </div>
+
+      <p id="statusText" class="status-text" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

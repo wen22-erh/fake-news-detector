@@ -1,0 +1,50 @@
+yuestar@yuestar:~$ chmod +x /home/yuestar/桌面/integrate/run_pipeline.sh
+yuestar@yuestar:~$ /home/yuestar/桌面/integrate/run_pipeline.sh
+資料已儲存至 csv_files/articles.csv
+/home/yuestar/桌面/integrate/.venv/lib/python3.10/site-packages/numpy/lib/function_base.py:520: RuntimeWarning: Mean of empty slice.
+  avg = a.mean(axis, **keepdims_kw)
+/home/yuestar/桌面/integrate/.venv/lib/python3.10/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Accuracy: nan
+Confusion matrix (rows=true 0/1, cols=pred 0/1):
+[[0 0]
+ [0 0]]
+Confusion matrix image saved to: csv_files/confusion_matrix.png
+No results to save.
+yuestar@yuestar:~$ crontab -e
+no crontab for yuestar - using an empty one
+
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.basic
+  3. /usr/bin/vim.tiny
+  4. /usr/bin/code
+  5. /bin/ed
+
+Choose 1-5 [1]: 1
+crontab: installing new crontab
+yuestar@yuestar:~$ crontab -l
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+0 6 * * * /home/yuestar/桌面/integrate/run_pipeline.sh >> /home/yuestar/桌面/integrate/pipeline.log 2>&1

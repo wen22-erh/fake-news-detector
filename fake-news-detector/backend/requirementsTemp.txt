@@ -1,0 +1,11 @@
+flask>=3.0,<4
+flask-cors>=4.0,<5
+pymongo>=4.6,<5
+gunicorn>=21,<24
+torch
+FastAPI
+transformers
+sentence-transformers
+numpy
+pandas
+

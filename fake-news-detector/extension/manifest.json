@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "URL 風險檢視",
+  "version": "1.0.3",
+  "description": "滑鼠懸停 URL 後顯示資料庫標記結果。",
+  "permissions": [
+    "storage",
+    "sidePanel",
+    "alarms",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:5050/*",
+    "http://localhost:5050/*",
+    "http://120.105.129.171:5050/*"
+  ],
+  "side_panel": {
+    "default_path": "sidepanel/sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "action": {
+    "default_title": "開啟 URL 風險檢視側邊欄"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content/content.js"
+      ],
+      "css": [
+        "content/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "popup/popup.html"
+}

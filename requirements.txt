@@ -1,0 +1,8 @@
+transformers==4.42.4
+datasets==2.19.0
+accelerate==0.31.0
+pandas==2.2.2
+scikit-learn==1.4.2
+matplotlib==3.8.4
+tensorboard==2.16.2
+protobuf<5

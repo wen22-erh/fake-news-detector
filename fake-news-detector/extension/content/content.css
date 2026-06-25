@@ -1,0 +1,172 @@
+#url-risk-hover-tooltip {
+  position: absolute;
+  z-index: 2147483647;
+  pointer-events: auto;
+}
+
+#url-risk-hover-tooltip:not(.visible) {
+  display: none;
+}
+
+#url-risk-hover-tooltip.visible {
+  display: block;
+}
+
+.urih-card {
+  width: 240px;
+  max-width: 240px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 10px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.16);
+  color: #0f172a;
+  font-family: Arial, "Noto Sans TC", sans-serif;
+  line-height: 1.4;
+}
+
+.urih-card-compact {
+  padding: 10px 10px 8px;
+}
+
+.urih-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.urih-title-group {
+  min-width: 0;
+}
+
+.urih-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.urih-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.urih-icon-btn {
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #475569;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.urih-icon-btn:hover {
+  background: rgba(148, 163, 184, 0.15);
+}
+
+.urih-icon-btn.is-pinned {
+  background: rgba(37, 99, 235, 0.12);
+  color: #1d4ed8;
+}
+
+.urih-section {
+  margin-bottom: 8px;
+}
+
+.urih-section-tight {
+  margin-bottom: 7px;
+}
+
+.urih-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.urih-url {
+  font-size: 12px;
+  color: #111827;
+  word-break: break-all;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.urih-inline-result {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.urih-reason {
+  font-size: 12px;
+  color: #334155;
+  word-break: break-word;
+}
+
+.urih-reason li {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  word-break: break-word !important;
+  white-space: normal !important;
+  margin-bottom: 2px;
+  display: list-item !important;
+}
+
+#url-risk-hover-tooltip * {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+}
+
+.urih-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.risk-safe {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.risk-low {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.risk-unknown {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.risk-suspicious {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.risk-danger {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.risk-not-recorded {
+  background: #ede9fe;
+  color: #6d28d9;
+}

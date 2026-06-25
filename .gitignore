@@ -1,0 +1,78 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+.nVenv/
+.test/
+fake-news-detector/backend/venv/
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Runtime data, crawler output, and generated exports
+exports/
+csv_files/
+csvfiles/
+inferencepipeline/csvfiles/
+crawler/exports/
+crawler/jobs/
+crawler/processed/
+crawler/results/
+*.jsonl
+*.sqlite
+*.db
+*.tar
+*.tar.gz
+*.zip
+*.7z
+
+# ML model artifacts and logs
+checkpoints/
+models/
+testing_mbert copy/
+testing_mbert/gemma4_bbc500_4300_dp0.3/
+runs/
+logs/
+tb_logs/
+tensorboard/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.onnx
+*.pkl
+*.joblib
+*.h5
+
+# Browser extension build/package artifacts
+*.crx
+
+# Third-party cloned source. Prefer documenting install/setup instead of vendoring.
+firecrawl/

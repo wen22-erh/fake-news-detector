@@ -1,0 +1,38 @@
+# ============================================================
+# requirements(check).txt
+# 由實際 import 掃描自動生成（2026-06-10）
+#
+# 掃描範圍：
+#   fake-news-detector/backend/run.py        ← Flask API 主程式
+#   testing_mbert/inference.py               ← 推論模組（run.py 直接 import）
+#   testing_mbert/model.py                   ← 模型定義（inference.py import）
+#   testing_mbert/analize_model_backend.py   ← 後端分析輔助
+#   testing_mbert/Hierarchical_mBERT.py      ← 訓練腳本（含 sklearn / matplotlib）
+#   testing_mbert/analize_model.py           ← 分析評估腳本
+#   total_preprocess.py                      ← 前處理模組（run.py 直接 import）
+# ============================================================
+
+# ── Web API ──────────────────────────────────────────────────
+flask>=3.0,<4
+flask-cors>=4.0,<5
+
+# ── Database ─────────────────────────────────────────────────
+pymongo>=4.6,<5
+
+# ── Production Server ────────────────────────────────────────
+gunicorn>=21,<24
+
+# ── Deep Learning（runtime 必要） ───────────────────────────
+torch
+transformers
+
+# ── Data Processing（runtime 必要） ─────────────────────────
+pandas
+numpy
+
+# ── Training / Evaluation Only（非 runtime 必要）────────────
+# 以下套件只在訓練腳本（Hierarchical_mBERT.py / analize_model.py）中使用，
+# 若只需跑 inference API（run.py），可不安裝：
+matplotlib
+scikit-learn
+datasets

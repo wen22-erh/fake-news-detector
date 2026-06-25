@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>URL 風險檢視</title>
+  <link rel="stylesheet" href="sidepanel.css">
+  <script src="sidepanel.js" defer></script>
+</head>
+
+<body>
+  <main class="panel-shell" aria-live="polite">
+    <section id="emptyState" class="empty-state">
+      <div class="empty-icon" aria-hidden="true">📄</div>
+      <h2>尚未選取 URL</h2>
+      <p>在網頁上將滑鼠移到連結，點擊 tooltip 的詳細資訊按鈕後，這裡會顯示後端最新的 URL 風險結果、可疑句段與文章內容。</p>
+    </section>
+
+    <article id="detailCard" class="detail-card hidden">
+      <section id="loadingState" class="loading-banner hidden" role="status">
+        <span class="spinner" aria-hidden="true"></span>
+        <span>正在向後端取得最新詳細資料…</span>
+      </section>
+
+      <section class="summary-card">
+        <div class="summary-topline">
+          <div>
+            <p class="section-label">判定結果</p>
+            <div id="badge" class="badge risk-unknown">未知</div>
+          </div>
+          <div class="status-stack">
+            <span id="dataStatus" class="status-pill">未知</span>
+            <span id="analysisTime" class="muted-text">未知</span>
+          </div>
+        </div>
+
+        <div class="url-block">
+          <p class="section-label">URL</p>
+          <div id="urlText" class="url-text"></div>
+        </div>
+
+        <div class="url-block">
+          <p class="section-label">文章標題</p>
+          <div id="titleText" class="url-text" style="font-family: inherit; font-weight: 700; font-size: 14px;"></div>
+        </div>
+
+
+      </section>
+      <section class="card-section">
+        <div class="section-header">
+          <h2>可疑句段與分數</h2>
+          <span id="sentenceCount" class="count-pill">0</span>
+        </div>
+        <ol id="suspiciousSentences" class="sentence-list"></ol>
+      </section>
+
+      <section class="card-section">
+        <div class="section-header">
+          <h2>文章內容</h2>
+          <span id="contentMeta" class="muted-text">無內容</span>
+        </div>
+        <div id="articleContent" class="article-content" tabindex="0"></div>
+      </section>
+      <footer class="panel-actions">
+        <button id="refreshBtn" class="primary-button" type="button">重新載入</button>
+      </footer>
+    </article>
+  </main>
+</body>
+
+</html>
