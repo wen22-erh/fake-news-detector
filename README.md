@@ -36,31 +36,13 @@
 
 ## 系統架構
 
-```text
-使用者 hover URL
-        |
-        v
-Chrome Extension Content Script
-        |
-        v
-Background Service Worker
-        |
-        v
-Flask REST API
-        |
-        +--> MongoDB 查詢已分析 URL
-        |
-        +--> Firecrawl 擷取未知 URL 文章內容
-        |
-        +--> 文本前處理
-        |
-        +--> 階層式 mBERT 推論
-        |
-        +--> 分析結果寫回 MongoDB
-        |
-        v
-Tooltip / Side Panel 顯示結果
-```
+![系統架構圖](docs/assets/system.png)
+
+## 模型架構設計 (Hierarchical mBERT)
+
+為了解決 mBERT 單次輸入 512 tokens 的長度限制，本系統設計了**階層式滑動視窗架構**。透過在 mBERT 之上堆疊額外的多頭自注意力層，不僅保留了長篇新聞後段的語境，更有效捕捉了不同段落間的潛在矛盾。
+
+![階層式 mBERT 模型架構圖](docs/assets/moddd_git.png)
 
 ## 成果畫面
 
@@ -95,8 +77,8 @@ Tooltip / Side Panel 顯示結果
 | Demo 影片 | https://www.youtube.com/watch?v=wxfsOjTkmXA |
 | 專題簡報 | https://canva.link/jlb67pyrjgrwlih |
 | 專題成果報告 | https://365nuu-my.sharepoint.com/:w:/g/personal/m1424005_o365_nuu_edu_tw/IQD-LrN2faecRIh8QUGBHX88Adg066KOFxRW6rALUsiKQyY |
-| 專題精簡論文 | https://365nuu-my.sharepoint.com/:w:/g/personal/m1424005_o365_nuu_edu_tw/IQAonCrX6qBLSbFmpdZFZ7fgAdlQ5MHWOkDegocfdYf6TNI |
-| GitHub Repository | 待補：推上 GitHub 後填入 repo URL |
+| 專題精簡論文 | https://365nuu-my.sharepoint.com/:w:/g/personal/m1424005_o365_nuu_edu_tw/IQAonCrX6qBLSbFmpdZFZ7fgATQbL_A9roQkCJAIRqgEX8M |
+| GitHub Repository | https://github.com/wen22-erh/fake-news-detector.git |
 
 ## 專案目錄
 
@@ -122,9 +104,9 @@ Tooltip / Side Panel 顯示結果
 - Explainability：模型內部訊號候選句段、LIME 對照實驗
 - Calibration：Temperature Scaling、Negative Log-Likelihood、Expected Calibration Error
 
-## Setup
+## 安裝與環境建置
 
-Create a local Python environment:
+建立並啟動本機端的 Python 虛擬環境:
 
 ```bash
 python -m venv .venv
@@ -140,26 +122,33 @@ cp .env.example .env
 
 Edit `.env` for your MongoDB, model path, crawler, and Firecrawl settings.
 
-## Run Inference Pipeline
+## 執行推論管線
 
-Run the full pipeline:
+執行完整的爬蟲與推論流程:
 
 ```bash
 python inferencepipeline/run_all.py
 ```
 
-Run without crawling:
+略過爬蟲，僅對既有資料進行推論:
 
 ```bash
 python inferencepipeline/run_all.py --skip-crawl
 ```
 
-## Run Extension Backend
+## 啟動擴充套件與後端服務
 
-The Chrome extension backend lives in `fake-news-detector/backend`. See `fake-news-detector/README.md` for the detailed extension, backend, MongoDB, and Docker instructions.
+系統的 Flask API 與 MongoDB 管理位於 fake-news-detector/backend 目錄下。詳細的後端啟動與 Docker 執行說明，請參閱該目錄下的 README.md。
+
+## Chrome 擴充套件安裝 (開發人員模式)
+- 打開 Chrome 瀏覽器，網址列輸入 chrome://extensions/
+
+- 開啟右上角的「開發人員模式」
+
+- 點擊左上角的「載入未封裝項目」
+
+- 選擇本專案中的擴充套件資料夾（如 fake-news-detector/extension），即可完成安裝並開始測試。
 
 ## GitHub Notes
 
 This repository intentionally ignores local secrets, virtual environments, generated CSV/JSONL outputs, crawler results, model checkpoints, packaged extensions, and third-party cloned source such as `firecrawl/`.
-
-Do not commit real `.env` files, `*.pem` keys, `.crx` packages, scraped news exports, or trained model weights unless you have verified they are safe and licensed for public release.
