@@ -1,4 +1,4 @@
-# 基於階層式 mBERT 與可解釋性 AI 之假新聞即時辨識 Chrome 擴充套件
+# 基於階層式 mBERT 與可解釋性 AI 之假新聞即時辨識 Chrome 擴充套件 A Real-Time Fake News Detection Chrome Extension Based on Hierarchical mBERT and Explainable AI
 
 本專題實作一套可嵌入日常瀏覽情境的假新聞輔助辨識系統。使用者在網頁中 hover 到新聞 URL 後，Chrome 擴充套件會在低干擾的提示框中顯示該連結的風險摘要；若需要更多資訊，也可以開啟側邊欄查看模型判斷結果、候選可疑句段與文章內容標示。
 
